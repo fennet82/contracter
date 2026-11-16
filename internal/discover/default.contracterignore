@@ -1,0 +1,37 @@
+# What `contracter init` leaves out unless told otherwise: files and
+# directories that have a config format's name without being a project's
+# configuration.
+#
+# A repo's own .contracterignore is read after this list, in the same syntax:
+#   name        a file or directory with that name, at any depth
+#   name/       directories only
+#   a/b/*.yaml  a path from the repo root (* and ? stay within one segment)
+#   !name       do not leave it out after all
+# The last line that matches wins. A comment is a line starting with #.
+
+# version control, editors, tool state
+.git/
+.idea/
+.vscode/
+.terraform/
+.terraform.lock.hcl
+
+# dependencies
+node_modules/
+vendor/
+.venv/
+venv/
+__pycache__/
+
+# build output
+dist/
+build/
+target/
+
+# package manifests and lock files
+package.json
+package-lock.json
+pnpm-lock.yaml
+composer.json
+composer.lock
+tsconfig.json
